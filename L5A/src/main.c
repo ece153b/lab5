@@ -22,8 +22,10 @@ int main(void) {
     // [TODO] Initialize PWM
 
     while (1) {
-        // [TODO] Trigger ADC and get result
-
+        //Trigger ADC and get result
+				ADC1->CR |= ADC_CR_ADSTART;
+				while(!(ADC123_COMMON->CSR &= ADC_CSR_EOC_MST)); //TODO: check this
+				uint16_t ADC_reading = (ADC1->DR & ADC_DR_RDATA); //TODO: check this as well 
         // [TODO] LED behavior based on ADC result
     }
 }
