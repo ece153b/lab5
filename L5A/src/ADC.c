@@ -40,7 +40,7 @@ void ADC_Common_Configuration() {
 	ADC123_COMMON->CCR &= ~(ADC_CCR_PRESC); 
 	//Ensure that the ADC clock scheme is set to HCLK/1 synchronous clock mode (set CKMODE to 01)
 	ADC123_COMMON->CCR &= ~(ADC_CCR_CKMODE); 
-	ADC123_COMMON->CCR |= ADC_CCR_CKMODE_0; 
+	ADC123_COMMON->CCR |= ADC_CCR_CKMODE_0; //TODO - double check this
 	//Ensure that all ADCs are operating in independent mode (set DUAL to 00000)
 	ADC123_COMMON->CCR &= ~(ADC_CCR_DUAL); 
 }
@@ -95,7 +95,7 @@ void ADC_Init(void) {
 	ADC1->CFGR &= ~(ADC_CFGR_CONT); 
 	ADC1->CFGR &= ~(ADC_CFGR_EXTEN); 
 	//Enable ADC
-	ADC1->CR &= ~(ADC_CR_ADEN); 	
+	ADC1->CR |= ADC_CR_ADEN; 	
 	//Wait until ADC is ready
-	while (!(ADC1->ISR & ADC_ISR_ADRDY)); 
+	while ((ADC1->ISR & ADC_ISR_ADRDY) == 0); 
 }

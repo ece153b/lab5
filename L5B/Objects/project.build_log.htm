@@ -1,0 +1,112 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Pablo Landriz, UCSB, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\adenjo\Downloads\lab5-main\lab5-main\L5B\project.uvprojx
+Project File Date:  05/13/2025
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+src/EXTI.c(1): warning: In file included from...
+src/EXTI.h(4): warning: In file included from...
+src/stm32l476xx.h(12): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   12 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+src/EXTI.c(33): warning: no previous extern declaration for non-static variable 'increasing' [-Wmissing-variable-declarations]
+   33 | int increasing = 0; 
+      |     ^
+src/EXTI.c(33): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   33 | int increasing = 0; 
+      | ^
+src/EXTI.c(34): warning: no previous extern declaration for non-static variable 'signed_DAC_value' [-Wmissing-variable-declarations]
+   34 | int signed_DAC_value = 0; 
+      |     ^
+src/EXTI.c(34): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   34 | int signed_DAC_value = 0; 
+      | ^
+src/EXTI.c(35): warning: no previous extern declaration for non-static variable 'DAC_value' [-Wmissing-variable-declarations]
+   35 | uint32_t DAC_value = 0; 
+      |          ^
+src/EXTI.c(35): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   35 | uint32_t DAC_value = 0; 
+      | ^
+src/EXTI.c(71): warning: no newline at end of file [-Wnewline-eof]
+   71 | }
+      |  ^
+src/EXTI.c(44): warning: no previous prototype for function 'EXTI15_10_IRQHandler' [-Wmissing-prototypes]
+   44 | void EXTI15_10_IRQHandler(void) {
+      |      ^
+src/EXTI.c(44): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   44 | void EXTI15_10_IRQHandler(void) {
+      | ^
+      | static 
+src/EXTI.c(37): warning: unused variable 'dac_value' [-Wunused-variable]
+   37 | static uint32_t dac_value = 0;
+      |                 ^~~~~~~~~
+src/EXTI.c(41): warning: unused variable 'direction' [-Wunused-variable]
+   41 | } direction = UP;
+      |   ^~~~~~~~~
+src/EXTI.c(14): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   14 |                 SYSCFG->EXTICR[3] &= ~SYSCFG_EXTICR4_EXTI13;
+      |                 ^~~~~~~~~~~~~~
+src/stm32l476xx.h(1362): note: expanded from macro 'SYSCFG'
+ 1362 | #define SYSCFG              ((SYSCFG_TypeDef *) SYSCFG_BASE)
+      |                             ^
+src/EXTI.c(15): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   15 |                 SYSCFG->EXTICR[3] |= SYSCFG_EXTICR4_EXTI13_PC;
+      |                 ^~~~~~~~~~~~~~
+src/stm32l476xx.h(1362): note: expanded from macro 'SYSCFG'
+ 1362 | #define SYSCFG              ((SYSCFG_TypeDef *) SYSCFG_BASE)
+      |                             ^
+10 warnings generated.
+compiling EXTI.c...
+linking...
+Program Size: Code=2020 RO-data=408 RW-data=0 ZI-data=1656  
+FromELF: creating hex file...
+".\Objects\project.axf" - 0 Error(s), 10 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM::CMSIS@5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32L4xx_DFP.2.7.0.pack
+                Keil::STM32L4xx_DFP@2.7.0
+                STMicroelectronics STM32L4 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Keil_v5/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Keil_v5/Packs/Keil/STM32L4xx_DFP/2.7.0/Drivers/CMSIS/Device/ST/STM32L4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@5.6.0
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
